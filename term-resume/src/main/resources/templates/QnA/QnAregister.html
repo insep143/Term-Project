@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/layout/layout}">
+
+<div layout:fragment="content">
+<div class="container-fluid p-0">
+        
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+            <div class="my-auto">
+				 <h2 class="mb-5">경력 </h2>
+				
+
+					<div class="panel-heading"><h1>QnA Register Page</h1></div>
+					<div class="panel-body">
+				
+						<form th:action="@{Qregister}" method="post">
+				
+							<div class="form-group">
+								<label>Question</label> <input class="form-control" name="Question"
+									th:value="${Q.question}" />
+								<p class="help-block">Question text here.</p>
+							</div>
+				
+							<div class="form-group">
+								<label>your name</label>
+								<textarea class="form-control" rows="3" name='name'
+									th:text="${Q.name}"></textarea>
+							</div>
+				
+							<button type="submit" class="btn btn-default">Submit Button</button>
+							<button type="reset" class="btn btn-primary">Reset Button</button>
+						</form>
+				
+					</div>
+				</div>
+			</section>
+		</div>
+</div>
+<!--  end fragment -->
+
+<th:block layout:fragment="script">
+
+	<script th:inline="javascript">
+
+	</script>
+
+</th:block>
